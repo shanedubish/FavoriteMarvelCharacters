@@ -6,7 +6,26 @@ body {
 }
 h1 {
   color: #1c74bb;
+  text-align: center;
 }
 .button {
   background-color: white;
+}
+.stat {
+  color: white;
+}
+.picture {
+  width: 30%;
+  height: 50%;
+}
+.coolpic {
+  width: 100%;
+  border-radius: 20px;
+  -webkit-box-shadow: 5px 8px 19px 30px black;
+  box-shadow: 5px 8px 19px 30px #300e79;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
