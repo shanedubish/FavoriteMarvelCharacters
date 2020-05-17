@@ -17,6 +17,14 @@ h1 {
 .picture {
   width: 30%;
   height: 50%;
+  color: white;
+  height: 100px;
+  width: 100px;
+}
+.noname {
+  height: 40px;
+  width: 50px;
+  clear: left;
 }
 .coolpic {
   width: 100%;
