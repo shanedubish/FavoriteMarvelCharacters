@@ -5,11 +5,48 @@ body {
   background-color: #1c0831;
 }
 h1 {
-  color: #1c74bb;
+  color: black;
   text-align: center;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 50px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  font-weight: 700;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  text-shadow: 0 1px 0px #378ab4, 1px 0 0px #5dabcd, 1px 2px 1px #378ab4,
+    2px 1px 1px #5dabcd, 2px 3px 2px #378ab4, 3px 2px 2px #5dabcd,
+    3px 4px 2px #378ab4, 4px 3px 3px #5dabcd, 4px 5px 3px #378ab4,
+    5px 4px 2px #5dabcd, 5px 6px 2px #378ab4, 6px 5px 2px #5dabcd,
+    6px 7px 1px #378ab4, 7px 6px 1px #5dabcd, 7px 8px 0px #378ab4,
+    8px 7px 0px #5dabcd;
 }
 .button {
   background-color: white;
+}
+.buttons {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  font-size: 20px;
+  cursor: pointer;
+  width: 15%;
+}
+.rightbutton {
+  width: 40px;
+  text-align: center;
+  -webkit-box-shadow: 1px 6px 10px 17px rgba(0, 0, 0, 0.77);
+  box-shadow: 1px 6px 10px 17px #868382;
+  border-radius: 3px;
+}
+.leftbutton {
+  width: 40px;
+  text-align: center;
+  -webkit-box-shadow: 1px 6px 10px 17px rgba(0, 0, 0, 0.77);
+  box-shadow: 1px 6px 10px 17px #868382;
+  border-radius: 3px;
 }
 .stat {
   color: white;
@@ -18,19 +55,22 @@ h1 {
   width: 30%;
   height: 50%;
   color: white;
-  height: 100px;
-  width: 100px;
+  text-align: center;
+  font-size: 20px;
 }
 .noname {
   height: 40px;
   width: 50px;
-  clear: left;
+}
+.noname > img {
+  height: 40px;
+  width: 50px;
 }
 .coolpic {
   width: 100%;
   border-radius: 20px;
-  -webkit-box-shadow: 5px 8px 19px 30px black;
-  box-shadow: 5px 8px 19px 30px #300e79;
+  -webkit-box-shadow: 1px -9px 27px 30px rgba(0, 0, 0, 0.74);
+  box-shadow: 1px -9px 27px 30px rgba(0, 0, 0, 0.74);
 }
 .container {
   display: flex;
