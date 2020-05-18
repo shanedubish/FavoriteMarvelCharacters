@@ -60,7 +60,13 @@ $(() => {
           const $statlist2 = $("<div>").appendTo($stats).addClass("stat");
           const $statlist3 = $("<div>").appendTo($stats).addClass("stat");
 
-          const $h1 = $("<button>").text("Powerstats").appendTo($statlist1);
+          const $h1 = $("<button>")
+            .text("Powerstats")
+            .appendTo($statlist1)
+            .on("click", () => {
+              $statlist1.children().toggle();
+              $h1.toggle();
+            });
           const text1 = $("<p>")
             .text(
               `Intelligence:  ${info.results[currentIndex].powerstats.intelligence}`
@@ -85,8 +91,64 @@ $(() => {
 
             .appendTo($statlist1)
             .hide();
-          const $h2 = $("<button>").text("Biography").appendTo($statlist2);
-          const $h3 = $("<button>").text("Appearance").appendTo($statlist3);
+          // const $h2 = $("<button>")
+          //   .text("Biography")
+          //   .appendTo($statlist2)
+          //   .on("click", () => {
+          //     $statlist2.children().toggle();
+          //     $h2.toggle();
+          //   });
+          // const text2_1 = $("<p>")
+          //   .text(
+          //     `Full Name:  ${info.results[currentIndex].biography.fullname}`
+          //   )
+          //
+          //   .appendTo($statlist2)
+          //   .hide();
+          // const text2_2 = $("<p>")
+          //   .text(
+          //     `Alter Egos:  ${
+          //       info.results[currentIndex].biography.
+          //     } `
+          //   )
+          //
+          //   .appendTo($statlist2)
+          //   .hide();
+          // const text2_3 = $("<p>")
+          //   .text(
+          //     `Place of Birth:  ${info.results[currentIndex].biography.placeofbirth}`
+          //   )
+          //
+          //   .appendTo($statlist2)
+          //   .hide();
+
+          const $h3 = $("<button>")
+            .text("Appearance")
+            .appendTo($statlist3)
+            .on("click", () => {
+              $statlist3.children().toggle();
+              $h3.toggle();
+            });
+          const text3_1 = $("<p>")
+            .text(`Gender:  ${info.results[currentIndex].appearance.gender}`)
+
+            .appendTo($statlist3)
+            .hide();
+          const text3_2 = $("<p>")
+            .text(`Race:  ${info.results[currentIndex].appearance.race}`)
+
+            .appendTo($statlist3)
+            .hide();
+          const text3_3 = $("<p>")
+            .text(`Height:  ${info.results[currentIndex].appearance.height}`)
+
+            .appendTo($statlist3)
+            .hide();
+          const text3_4 = $("<p>")
+            .text(`Weight:  ${info.results[currentIndex].appearance.weight}`)
+
+            .appendTo($statlist3)
+            .hide();
 
           // const $strength = $("<p>")
           //   .text(`Strength: ${info.results[currentIndex].powerstats.strength}`)
