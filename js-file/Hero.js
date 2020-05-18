@@ -45,32 +45,66 @@ $(() => {
         });
 
         console.log(info.results[currentIndex]);
+
         const getStuff = () => {
           $(".leftbutton").show();
           $(".rightbutton").show();
           const $stats = $(".info");
-          const $statlist = $("<div>").appendTo($stats).addClass("stat");
-          const $name = $("<p>")
+
+          const $name = $("<h3>")
             .text(info.results[currentIndex].name)
-            .appendTo($statlist);
+            .appendTo($stats)
+            .addClass("name");
 
-          const $strength = $("<p>")
-            .text(`Strength: ${info.results[currentIndex].powerstats.strength}`)
-            .appendTo($statlist);
+          const $statlist1 = $("<div>").appendTo($stats).addClass("stat");
+          const $statlist2 = $("<div>").appendTo($stats).addClass("stat");
+          const $statlist3 = $("<div>").appendTo($stats).addClass("stat");
 
-          const $speed = $("<p>")
-            .text(`Speed: ${info.results[currentIndex].powerstats.speed}`)
-            .appendTo($statlist);
-
-          const $power = $("<p>")
-            .text(`Power: ${info.results[currentIndex].powerstats.power}`)
-            .appendTo($statlist);
-
-          const $intelligence = $("<p>")
+          const $h1 = $("<button>").text("Powerstats").appendTo($statlist1);
+          const text1 = $("<p>")
             .text(
-              `Intelligence: ${info.results[currentIndex].powerstats.intelligence}`
+              `Intelligence:  ${info.results[currentIndex].powerstats.intelligence}`
             )
-            .appendTo($statlist);
+
+            .appendTo($statlist1)
+            .hide();
+          const text2 = $("<p>")
+            .text(
+              `Strength:  ${info.results[currentIndex].powerstats.strength}`
+            )
+
+            .appendTo($statlist1)
+            .hide();
+          const text3 = $("<p>")
+            .text(`Speed:  ${info.results[currentIndex].powerstats.speed}`)
+
+            .appendTo($statlist1)
+            .hide();
+          const text4 = $("<p>")
+            .text(`Power:  ${info.results[currentIndex].powerstats.power}`)
+
+            .appendTo($statlist1)
+            .hide();
+          const $h2 = $("<button>").text("Biography").appendTo($statlist2);
+          const $h3 = $("<button>").text("Appearance").appendTo($statlist3);
+
+          // const $strength = $("<p>")
+          //   .text(`Strength: ${info.results[currentIndex].powerstats.strength}`)
+          //   .appendTo($statlist);
+          //
+          // const $speed = $("<p>")
+          //   .text(`Speed: ${info.results[currentIndex].powerstats.speed}`)
+          //   .appendTo($statlist);
+          //
+          // const $power = $("<p>")
+          //   .text(`Power: ${info.results[currentIndex].powerstats.power}`)
+          //   .appendTo($statlist);
+          //
+          // const $intelligence = $("<p>")
+          //   .text(
+          //     `Intelligence: ${info.results[currentIndex].powerstats.intelligence}`
+          //   )
+          //   .appendTo($statlist);
 
           const $imagePlace = $(".picture");
           const $image = $("<img>")
@@ -84,9 +118,10 @@ $(() => {
         console.log(err);
         const errorimg = $("<img>")
           .attr("src", "img/skull.png")
-          .appendTo(".noname");
+          .appendTo(".picture")
+          .addClass("skull");
         const errorMessage = $("<p>")
-          .text("Name not found")
+          .text("Error not found!")
           .addClass("not-found")
           .appendTo(".picture");
       });
