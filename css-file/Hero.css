@@ -1,11 +1,8 @@
 body {
-  background-image: url("../img/m:dc.jpeg");
+  background-image: url("../img/m:dc.jpeg"), url("../img/m:dc.jpeg");
   background-size: 100%;
-
-  background-repeat: repeat;
   background-color: #1c0831;
   background-attachment: fixed;
-  transform: rotateY(180);
 }
 h1 {
   /* color: black; */
@@ -132,5 +129,19 @@ p {
 }
 .info {
   display: flex;
+  flex-direction: column;
+}
+#nameid {
+  width: 100%;
+  text-align: center;
+}
+#statsid {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+@media screen and (max-width: 700px) {
+  #statsid {
+    display: flex;
   flex-direction: column;
 }

@@ -1,7 +1,5 @@
 console.log("hello world");
 $(() => {
-  let currentIndex = 0;
-
   $(".leftbutton").hide();
   $(".rightbutton").hide();
 
@@ -9,7 +7,7 @@ $(() => {
     event.preventDefault();
     $(".picture").empty();
     $(".info").empty();
-
+    let currentIndex = 0;
     let nameInput = $('input[type="text"]').val();
 
     $.ajax({
@@ -51,7 +49,7 @@ $(() => {
           $(".leftbutton").show();
           $(".rightbutton").show();
 
-          const $stats = $(".info");
+          const $stats = $("#statsid");
           const $numDiv = $("<span>")
             .text(info.results.length)
             .appendTo(".num")
@@ -60,8 +58,8 @@ $(() => {
 
           const $name = $("<h3>")
             .text(info.results[currentIndex].name)
-            .appendTo($stats)
-            .addClass("name");
+            .appendTo("#nameid")
+            .addClass("name stat");
 
           const $statlist1 = $("<div>").appendTo($stats).addClass("stat");
           const $statlist2 = $("<div>").appendTo($stats).addClass("stat");
@@ -206,10 +204,6 @@ $(() => {
   };
   $("#info").on("click", start);
   $("#reset").on("click", () => {
-    $(".picture").empty();
-    $(".info").empty();
-    $(".leftbutton").hide();
-    $(".rightbutton").hide();
-    $(".num").empty();
+    location.reload(true);
   });
 });
