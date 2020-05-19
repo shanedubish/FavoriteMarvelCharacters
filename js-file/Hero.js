@@ -47,9 +47,16 @@ $(() => {
         console.log(info.results[currentIndex]);
 
         const getStuff = () => {
+          $(".num").empty();
           $(".leftbutton").show();
           $(".rightbutton").show();
+
           const $stats = $(".info");
+          const $numDiv = $("<span>")
+            .text(info.results.length)
+            .appendTo(".num")
+            .css("background", "black")
+            .css("border-radius", "4px");
 
           const $name = $("<h3>")
             .text(info.results[currentIndex].name)
@@ -63,6 +70,8 @@ $(() => {
           const $h1 = $("<button>")
             .text("Powerstats")
             .appendTo($statlist1)
+            .addClass("statButtons")
+            .css("cursor", "pointer")
             .on("click", () => {
               $statlist1.children().toggle();
               $h1.toggle();
@@ -91,40 +100,50 @@ $(() => {
 
             .appendTo($statlist1)
             .hide();
-          // const $h2 = $("<button>")
-          //   .text("Biography")
-          //   .appendTo($statlist2)
-          //   .on("click", () => {
-          //     $statlist2.children().toggle();
-          //     $h2.toggle();
-          //   });
-          // const text2_1 = $("<p>")
-          //   .text(
-          //     `Full Name:  ${info.results[currentIndex].biography.fullname}`
-          //   )
-          //
-          //   .appendTo($statlist2)
-          //   .hide();
-          // const text2_2 = $("<p>")
-          //   .text(
-          //     `Alter Egos:  ${
-          //       info.results[currentIndex].biography.
-          //     } `
-          //   )
-          //
-          //   .appendTo($statlist2)
-          //   .hide();
-          // const text2_3 = $("<p>")
-          //   .text(
-          //     `Place of Birth:  ${info.results[currentIndex].biography.placeofbirth}`
-          //   )
-          //
-          //   .appendTo($statlist2)
-          //   .hide();
+
+          const $h2 = $("<button>")
+            .text("Biography")
+            .appendTo($statlist2)
+            .addClass("statButtons")
+            .css("cursor", "pointer")
+            .on("click", () => {
+              $statlist2.children().toggle();
+              $h2.toggle();
+            });
+          const text2_1 = $("<p>")
+            .text(
+              `Full Name:  ${info.results[currentIndex].biography["full-name"]}`
+            )
+
+            .appendTo($statlist2)
+            .hide();
+          const text2_2 = $("<p>")
+            .text(
+              `Alter Egos:  ${info.results[currentIndex].biography["alter-egos"]} `
+            )
+
+            .appendTo($statlist2)
+            .hide();
+          const text2_3 = $("<p>")
+            .text(
+              `Place of Birth:  ${info.results[currentIndex].biography["place-of-birth"]}`
+            )
+
+            .appendTo($statlist2)
+            .hide();
+          const text2_4 = $("<p>")
+            .text(
+              `First Appearance:  ${info.results[currentIndex].biography["first-appearance"]}`
+            )
+
+            .appendTo($statlist2)
+            .hide();
 
           const $h3 = $("<button>")
             .text("Appearance")
             .appendTo($statlist3)
+            .addClass("statButtons")
+            .css("cursor", "pointer")
             .on("click", () => {
               $statlist3.children().toggle();
               $h3.toggle();
@@ -150,23 +169,20 @@ $(() => {
             .appendTo($statlist3)
             .hide();
 
-          // const $strength = $("<p>")
-          //   .text(`Strength: ${info.results[currentIndex].powerstats.strength}`)
-          //   .appendTo($statlist);
-          //
-          // const $speed = $("<p>")
-          //   .text(`Speed: ${info.results[currentIndex].powerstats.speed}`)
-          //   .appendTo($statlist);
-          //
-          // const $power = $("<p>")
-          //   .text(`Power: ${info.results[currentIndex].powerstats.power}`)
-          //   .appendTo($statlist);
-          //
-          // const $intelligence = $("<p>")
-          //   .text(
-          //     `Intelligence: ${info.results[currentIndex].powerstats.intelligence}`
-          //   )
-          //   .appendTo($statlist);
+          const text3_5 = $("<p>")
+            .text(
+              `Eye Color:  ${info.results[currentIndex].appearance["eye-color"]}`
+            )
+
+            .appendTo($statlist3)
+            .hide();
+          const text3_6 = $("<p>")
+            .text(
+              `Hair Color:  ${info.results[currentIndex].appearance["hair-color"]}`
+            )
+
+            .appendTo($statlist3)
+            .hide();
 
           const $imagePlace = $(".picture");
           const $image = $("<img>")
@@ -189,4 +205,11 @@ $(() => {
       });
   };
   $("#info").on("click", start);
+  $("#reset").on("click", () => {
+    $(".picture").empty();
+    $(".info").empty();
+    $(".leftbutton").hide();
+    $(".rightbutton").hide();
+    $(".num").empty();
+  });
 });
