@@ -19,7 +19,8 @@ $(() => {
         $(".rightbutton").on("click", () => {
           console.log(currentIndex);
           $(".picture").empty();
-          $(".info").empty();
+          $("#nameid").empty();
+          $("#statsid").empty();
           if (currentIndex < slideNum) {
             currentIndex++;
           } else {
@@ -32,7 +33,8 @@ $(() => {
         $(".leftbutton").on("click", () => {
           console.log(currentIndex);
           $(".picture").empty();
-          $(".info").empty();
+          $("#nameid").empty();
+          $("#statsid").empty();
           if (currentIndex > 0) {
             currentIndex--;
           } else {
@@ -50,8 +52,11 @@ $(() => {
           $(".rightbutton").show();
 
           const $stats = $("#statsid");
+          const curNum = currentIndex;
+          const addNum = curNum + 1;
+
           const $numDiv = $("<span>")
-            .text(info.results.length)
+            .text(`${addNum} of ${info.results.length}`)
             .appendTo(".num")
             .css("background", "black")
             .css("border-radius", "4px");
