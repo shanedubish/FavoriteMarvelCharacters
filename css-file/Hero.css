@@ -140,7 +140,7 @@ p {
   display: flex;
   justify-content: space-around;
 }
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 950px) {
   #statsid {
     display: flex;
     flex-direction: column;
@@ -149,8 +149,6 @@ p {
     background-size: cover;
     background-position: center;
   }
-}
-@media screen and (max-width: 950px) {
   .buttons {
     display: flex;
     flex-direction: column;

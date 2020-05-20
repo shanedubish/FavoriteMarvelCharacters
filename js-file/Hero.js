@@ -6,6 +6,8 @@ $(() => {
   const start = () => {
     event.preventDefault();
     $(".picture").empty();
+    $("#nameid").empty();
+    $("#statsid").empty();
     $(".info").empty();
     let currentIndex = 0;
     let nameInput = $('input[type="text"]').val();
