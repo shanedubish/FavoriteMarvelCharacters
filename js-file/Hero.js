@@ -13,7 +13,7 @@ $(() => {
     let nameInput = $('input[type="text"]').val();
 
     $.ajax({
-     url: `http(s)://thingproxy.freeboard.io/fetch/https://superheroapi.com/api/10215488179708651/search/${nameInput}`,
+     url: `https://thingproxy.freeboard.io/fetch/https://superheroapi.com/api/10215488179708651/search/${nameInput}`,
      
       type: "Get",
       
