@@ -3,7 +3,7 @@ $(() => {
   $(".leftbutton").hide();
   $(".rightbutton").hide();
 
-  const start = () => {
+  const start = (event) => {
     event.preventDefault();
     $(".picture").empty();
     $("#nameid").empty();
@@ -13,8 +13,10 @@ $(() => {
     let nameInput = $('input[type="text"]').val();
 
     $.ajax({
-      url: `https://cors-anywhere.herokuapp.com/superheroapi.com/api/10215488179708651/search/${nameInput}`,
+     url: `http(s)://thingproxy.freeboard.io/fetch/https://superheroapi.com/api/10215488179708651/search/${nameInput}`,
+     
       type: "Get",
+      
     })
       .then((info) => {
         const slideNum = info.results.length - 1;
