@@ -12,13 +12,21 @@ $(() => {
     let currentIndex = 0;
     let nameInput = $('input[type="text"]').val();
 
-    $.ajax({
-     url: `https://thingproxy.freeboard.io/fetch/https://superheroapi.com/api/10215488179708651/search/${nameInput}`,
+    //$.ajax({
 
-      type: "Get",
+    // url: `https://thingproxy.freeboard.io/fetch/https://superheroapi.com/api/10215488179708651/search/${nameInput}`,
+
+    //  type: "Get",
       
-    })
-      .then((info) => {
+    //})
+    $.getJSON(`http://api.allorigins.win/get?url=https%3A//superheroapi.com/api/10215488179708651/search/${nameInput}&callback=?`, function (data) {
+	
+   // })
+      //.then((info) => {
+        
+        data = JSON.parse(data.contents)
+        let info = data
+        console.log(info);
         const slideNum = info.results.length - 1;
         $(".rightbutton").on("click", () => {
           console.log(currentIndex);
