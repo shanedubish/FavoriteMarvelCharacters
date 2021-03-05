@@ -19,7 +19,7 @@ $(() => {
     //  type: "Get",
       
     //})
-    $.getJSON(`http://api.allorigins.win/get?url=https%3A//superheroapi.com/api/10215488179708651/search/${nameInput}&callback=?`, function (data) {
+    $.getJSON(`https://api.allorigins.win/get?url=https%3A//superheroapi.com/api/10215488179708651/search/${nameInput}&callback=?`, function (data) {
 	
    // })
       //.then((info) => {
